@@ -1,6 +1,6 @@
 /**
  *  @file          wave-signal.h
- *  @date          Time-stamp: <2014-07-01 20:34:48, by lyzh>
+ *  @date          Time-stamp: <2014-07-01 21:16:07, by lyzh>
  *  @brief         
  *  @version       1.0.0
  *  @author        Liangyaozhan
@@ -14,6 +14,11 @@
 
 
 #include <stdint.h>
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif                                                                  /* __cplusplus                  */
 
 #define USE_CSV_FILE    1
 
@@ -37,7 +42,7 @@ struct system_wave_signal
     struct wave_signal i_b;
     struct wave_signal i_c;
     struct wave_signal i_n;
-    
+
 };
 
 void wave_signal_init( struct wave_signal *_this );
@@ -58,13 +63,6 @@ void system_wave_signal_iset( struct system_wave_signal *_this, double scale, do
 int system_wave_signal_write_csv( struct system_wave_signal *_this, const char *filename );
 #endif
 void system_wave_signal_destroy( struct system_wave_signal *_this );
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif                                                                  /* __cplusplus                  */
-
-
 
 #ifdef __cplusplus
 }
